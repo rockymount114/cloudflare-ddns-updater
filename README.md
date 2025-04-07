@@ -1,10 +1,21 @@
-# Cloudflare Dynamic DNS IP Updater
-<img alt="GitHub" src="https://img.shields.io/github/license/K0p1-Git/cloudflare-ddns-updater?color=black"> <img alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/K0p1-Git/cloudflare-ddns-updater/main"> <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/K0p1-Git/cloudflare-ddns-updater">
+##
+1. Cloudflare, create a token for ddns, and set a record as `vpn` point to `your public ip address`
+2. Clone repo to root, `cp cloudflare-template.sh cloudflare.sh`
+3. set for
+     ```
+    auth_email=""                                       # The email used to login 'https://dash.cloudflare.com'
+    auth_method="token"                                 # Set to "global" for Global API Key or "token" for Scoped API Token
+    auth_key=""                                         # Your API Token or Global API Key
+    zone_identifier=""                                  # Can be found in the "Overview" tab of your domain
+    record_name="" 
+    ```
+4. execute to test
+5. set cron job, `crontab -e` set as `*/1 * * * * /bin/bash /root/cloudflare-ddns-updater/cloudflare.sh`
+6. restart cron `systemctl restart cron`
 
-This script is used to update Dynamic DNS (DDNS) service based on Cloudflare! Access your home network remotely via a custom domain name without a static IP! Written in pure BASH.
 
-## Support Me
-[![Donate Via Paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.me/Jasonkkf)
+
+
 
 ## Installation
 
